@@ -202,13 +202,13 @@
 	\leavevmode{\begin{minipage}{\linewidth}
 		\begin{center}
 			{\fontsize{50}{50}\selectfont\decoFont{\pnpsw@title}}\\
-			\Large\pnpsw@subtitle\bigskip\\
+			\large\pnpsw@subtitle\bigskip\\
 		\end{center}
 	\end{minipage}}\\
 }
 
 \renewenvironment{abstract}[1][Abstract]{%
-    \leavevmode\begin{minipage}{\linewidth}\decoFont{#1}%
+    \leavevmode\begin{minipage}{\linewidth}\textbf{#1}%
         \smallskip\newline\itshape\ignorespaces%
 }{\end{minipage}}
 
