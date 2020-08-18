@@ -42,7 +42,7 @@
 \RequirePackage[T1]{fontenc}
 \RequirePackage[utf8]{inputenc}
 % beautify & layout
-\RequirePackage{lmodern,microtype,enumitem,multicol,relsize,amssymb}
+\RequirePackage{lmodern,microtype,enumitem,multicol,relsize,amssymb,lastpage}
 \RequirePackage[automark]{scrlayer-scrpage}
 \RequirePackage[many]{tcolorbox}
 % general
@@ -63,11 +63,11 @@
 %% fonts
 %% -----------------------------------------------------------------------------
 
-\RequirePackage{CormorantGaramond}
+\RequirePackage{XCharter,miama}
+\RequirePackage[charter]{mathdesign}
 
-\def\useefont{\usefont{U}{eur}{b}{n}}
-\def\efont#1{%
-    \begingroup\useefont#1\endgroup%
+\def\decoFont#1{%
+    \begingroup\fmmfamily{#1}\endgroup%
 }
 
 \setcounter{tocdepth}{2}
@@ -75,10 +75,13 @@
 %% style enumerations
 %% -----------------------------------------------------------------------------
 
+\setlist[]{labelindent=1em}
+
 \setlist[description]{font=\mdseries\itshape}
 \setlist[itemize,1]{label={\textcolor{cprimary}{\larger$\triangleright$}}}
-\setlist[itemize,2]{label={\textcolor{cprimary}{\smaller[2]$\bigcirc$}}}
-\setlist[itemize,3]{label={\textcolor{cprimary}{\smaller[2]$\square$}}}
+\setlist[itemize,2]{label={\textcolor{cprimary}{\smaller[3]\raisebox{2pt}{$\blacksquare$}}}}
+\setlist[itemize,3]{label={\textcolor{cprimary}{\raisebox{1.45pt}{\textendash}}}}
+\setlist[itemize,4]{label={\textcolor{cprimary}{\smaller[2]\raisebox{1.45pt}{$\circ$}}}}
 
 
 %% style the table of contents
@@ -105,23 +108,23 @@
   \ifx\temp@@a\temp@@b%
   	\textcolor{cprimary}{\thesection}%
   \else\ifx\temp@@a\temp@@c%
-    \textcolor{cprimary}{\thesection:\arabic{#1}}%
+    \textcolor{cprimary}{\thesection.\arabic{#1}}%
     \else\textcolor{cprimary}{\thesubsection.\arabic{#1}}\fi%
   \fi%
 }
 
 \renewcommand{\section}{\@startsection{section}{1}{\z@}
-{-4ex \@plus -1ex \@minus -.4ex}{1ex \@plus.2ex}
-{\normalfont\LARGE\bfseries\useefont}}
+{-4ex \@plus -1ex \@minus -.4ex}{1ex \@plus.2ex \@minus .1ex}
+{\normalfont\LARGE\bfseries}}
 \renewcommand{\subsection}{\@startsection{subsection}{2}{\z@}
-{-3ex \@plus -0.1ex \@minus -.4ex}{0.5ex \@plus.2ex}
-{\normalfont\normalsize\bfseries\useefont}}
+{-3ex \@plus -0.1ex \@minus -.4ex}{0.5ex \@plus.2ex \@minus .1ex}
+{\normalfont\normalsize\bfseries}}
 \renewcommand{\subsubsection}{\@startsection{subsubsection}{3}{\z@}
-{-2ex \@plus -0.1ex \@minus -.2ex}{.2ex \@plus.2ex}
-{\normalfont\small\sffamily\itshape}}
+{-2ex \@plus -0.1ex \@minus -.2ex}{.2ex \@plus.2ex \@minus .1ex}
+{\normalfont\itshape}}
 \renewcommand{\paragraph}{\@startsection{paragraph}{4}{\z@}
-{-2ex \@plus-.2ex \@minus .2ex}{.1ex}
-{\normalfont\large\itshape}}
+{-2ex \@plus-.2ex \@minus .2ex}{.1ex \@minus .02ex}
+{\normalfont\small\itshape}}
 
 \renewcommand{\contentsname}{}%
 \AtBeginDocument{\@ifundefined{addto}{}{%
@@ -139,9 +142,8 @@
 	\pagenumbering{arabic}%
 	\pagestyle{scrheadings}%
 	\clearscrheadfoot%
-	\ofoot{\textbf{\thepage}}%
-	\lofoot{{\thesection.~\pnpsw@rightmark}}%
-	\refoot{{\leftmark}}%
+	\ofoot{\textbf{\thepage}/\footnotesize{\pageref*{LastPage}}}%
+	\lofoot{\footnotesize{\thesection.~\pnpsw@rightmark}}%
 	\addtocontents{toc}{\protect\thispagestyle{scrheadings}}%
 }
 
@@ -178,7 +180,7 @@
 \begin{center}
 	\hypersetup{linkcolor=black}%
 	\begin{tcolorbox}[pnpsw@tocstyle,bottom=5.6pt]
-		\leavevmode\\\noindent{\Large\efont{\pnpsw@toctitle}}\hfill\\[-1.5\baselineskip]
+		\leavevmode\\\noindent{\Large{\pnpsw@toctitle}}\hfill\\[-1.5\baselineskip]
 		\setlength\columnsep{25pt}\begin{multicols}{2}
 		\tableofcontents
 		\end{multicols}
@@ -199,14 +201,14 @@
 \def\maketitle{%
 	\leavevmode{\begin{minipage}{\linewidth}
 		\begin{center}
-			{\Huge\efont{\pnpsw@title}}\\
+			{\fontsize{50}{50}\selectfont\decoFont{\pnpsw@title}}\\
 			\Large\pnpsw@subtitle\bigskip\\
 		\end{center}
 	\end{minipage}}\\
 }
 
 \renewenvironment{abstract}[1][Abstract]{%
-    \leavevmode\begin{minipage}{\linewidth}\efont{#1}%
+    \leavevmode\begin{minipage}{\linewidth}\decoFont{#1}%
         \smallskip\newline\itshape\ignorespaces%
 }{\end{minipage}}
 
