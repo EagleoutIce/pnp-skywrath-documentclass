@@ -115,9 +115,9 @@
 
 \renewcommand{\section}{\@startsection{section}{1}{\z@}
 {-4ex \@plus -1ex \@minus -.4ex}{1ex \@plus.2ex \@minus .1ex}
-{\normalfont\LARGE\bfseries}}
+{\normalfont\Large\bfseries}}
 \renewcommand{\subsection}{\@startsection{subsection}{2}{\z@}
-{-3ex \@plus -0.1ex \@minus -.4ex}{0.5ex \@plus.2ex \@minus .1ex}
+{-3ex \@plus -0.1ex \@minus -.4ex}{0.25ex \@plus.2ex \@minus .1ex}
 {\normalfont\normalsize\bfseries}}
 \renewcommand{\subsubsection}{\@startsection{subsubsection}{3}{\z@}
 {-2ex \@plus -0.1ex \@minus -.2ex}{.2ex \@plus.2ex \@minus .1ex}
