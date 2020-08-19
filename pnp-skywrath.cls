@@ -124,7 +124,7 @@
 {\normalfont\itshape}}
 \renewcommand{\paragraph}{\@startsection{paragraph}{4}{\z@}
 {-2ex \@plus-.2ex \@minus .2ex}{.1ex \@minus .02ex}
-{\normalfont\itshape}}
+{\normalfont\itshape \raisebox{0.91pt}{$\color{cprimary}\blacktriangleright$}~}}
 
 \renewcommand{\contentsname}{}%
 \AtBeginDocument{\@ifundefined{addto}{}{%
