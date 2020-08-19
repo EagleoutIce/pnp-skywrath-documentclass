@@ -78,10 +78,10 @@
 \setlist[]{labelindent=1em}
 
 \setlist[description]{font=\mdseries\itshape}
-\setlist[itemize,1]{label={\textcolor{cprimary}{\larger$\triangleright$}}}
-\setlist[itemize,2]{label={\textcolor{cprimary}{\smaller[3]\raisebox{2pt}{$\blacksquare$}}}}
-\setlist[itemize,3]{label={\textcolor{cprimary}{\raisebox{1.45pt}{\textendash}}}}
-\setlist[itemize,4]{label={\textcolor{cprimary}{\smaller[2]\raisebox{1.45pt}{$\circ$}}}}
+\setlist[itemize,1]{label={\textcolor{cprimary!40!white}{$\blacktriangleright$}}}
+\setlist[itemize,2]{label={\textcolor{cprimary!40!white}{\smaller[2]\raisebox{2pt}{$\blacksquare$}}}}
+\setlist[itemize,3]{label={\textcolor{cprimary!40!white}{\raisebox{1.45pt}{\textendash}}}}
+\setlist[itemize,4]{label={\textcolor{cprimary}{\smaller[1]\raisebox{0.25pt}{*}}}}
 
 
 %% style the table of contents
