@@ -161,6 +161,10 @@
     \SetStyle%
 }
 
+% footnotes:
+\renewcommand*{\thefootnote}{$\langle\arabic{footnote}\rangle$}
+\renewcommand*{\thempfootnote}{$\langle\roman{mpfootnote}\rangle$}
+
 %% title layout
 %% -----------------------------------------------------------------------------
 
