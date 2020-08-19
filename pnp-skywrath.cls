@@ -75,9 +75,9 @@
 %% style enumerations
 %% -----------------------------------------------------------------------------
 
-\setlist[]{labelindent=1em}
+\setlist[]{labelindent=0.75em}
 
-\setlist[description]{font=\mdseries\itshape}
+\setlist[description]{font=\mdseries\rmfamily\itshape,labelindent=0pt}
 \setlist[itemize,1]{label={\textcolor{cprimary!40!white}{$\blacktriangleright$}}}
 \setlist[itemize,2]{label={\textcolor{cprimary!40!white}{\smaller[2]\raisebox{2pt}{$\blacksquare$}}}}
 \setlist[itemize,3]{label={\textcolor{cprimary!40!white}{\raisebox{1.45pt}{\textendash}}}}
