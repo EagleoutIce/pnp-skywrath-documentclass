@@ -83,6 +83,11 @@
 \setlist[itemize,3]{label={\textcolor{cprimary!40!white}{\raisebox{1.45pt}{\textendash}}}}
 \setlist[itemize,4]{label={\textcolor{cprimary}{\smaller[1]\raisebox{0.25pt}{*}}}}
 
+\def\pnpsw@enum@font#1{\textcolor{cprimary!70!white}{#1.}}
+\setlist[enumerate,1]{label={\pnpsw@enum@font{\itshape\arabic*}}}
+\setlist[enumerate,2]{label={\pnpsw@enum@font{\roman*}}}
+\setlist[enumerate,3]{label={\pnpsw@enum@font{\alph*}}}
+\setlist[enumerate,4]{label={\pnpsw@enum@font{\Roman*}}}
 
 %% style the table of contents
 %% -----------------------------------------------------------------------------
