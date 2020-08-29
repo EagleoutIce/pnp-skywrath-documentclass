@@ -66,8 +66,11 @@
 \RequirePackage{XCharter,miama}
 \RequirePackage[charter]{mathdesign}
 
+\def\SetDecoFont#1{\gdef\@decoFont##1{#1{##1}}}
+\SetDecoFont{\fmmfamily}
+
 \def\decoFont#1{%
-    \begingroup\fmmfamily{#1}\endgroup%
+    \begingroup\@decoFont{#1}\endgroup%
 }
 
 \setcounter{tocdepth}{2}
@@ -103,16 +106,18 @@
 \def\cftsubsecnumwidth{1.45em}
 \setlength{\cftbeforesecskip}{2.3pt}
 
+\def\pnpsw@@section{section}\def\pnpsw@@subsection{subsection}%
+\def\pnpsw@@paragraph{paragraph}
+
 \DeclareRobustCommand{\sectionlinesformat}[4]{%
-\def\temp@@a{#1}\def\temp@@b{paragraph}\noindent\phantomsection\ifx\temp@@a\temp@@b\relax #4\else{{\smaller #3}\, #4}\fi%
+\def\temp@@a{#1}\noindent\phantomsection\ifx\temp@@a\pnpsw@@paragraph\relax #4\else{{\smaller #3}\, #4}\fi%
 }
 
 \DeclareRobustCommand{\@seccntformat}[1]{%
   \def\temp@@a{#1}%
-  \def\temp@@b{section}\def\temp@@c{subsection}%
-  \ifx\temp@@a\temp@@b%
+  \ifx\temp@@a\pnpsw@@section%
   	\textcolor{cprimary}{\thesection}%
-  \else\ifx\temp@@a\temp@@c%
+  \else\ifx\temp@@a\pnpsw@@subsection%
     \textcolor{cprimary}{\thesection.\arabic{#1}}%
     \else\textcolor{cprimary}{\thesubsection.\arabic{#1}}\fi%
   \fi%
@@ -128,7 +133,7 @@
 {-2ex \@plus -0.1ex \@minus -.2ex}{.2ex \@plus.2ex \@minus .1ex}
 {\normalfont\itshape}}
 \renewcommand{\paragraph}{\@startsection{paragraph}{4}{\z@}
-{-2ex \@plus-.2ex \@minus .2ex}{.1ex \@minus .02ex}
+{-2.5ex \@plus-.2ex \@minus .2ex}{.1ex \@minus .5ex}
 {\normalfont\itshape \raisebox{0.91pt}{$\color{cprimary}\blacktriangleright$}~}}
 
 \renewcommand{\contentsname}{}%
