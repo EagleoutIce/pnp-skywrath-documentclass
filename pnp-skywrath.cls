@@ -6,10 +6,8 @@
 %%    All internal commands and registers will be prefixed with 'pnpsw@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{pnp-skywrath}[2020/18/08 EagleoutIce - pnp-skywrath documentclass]
-
 %% Options
 \ProcessOptions\relax
-
 %% lengths
 \AtBeginDocument{%
 \parskip=1.5ex \@plus .75ex \@minus .5ex\relax
@@ -147,10 +145,10 @@
 %% title layout
 \tcbset{%
   pnpsw@tocstyle/.style={%
-    colback=MudWhite!5,boxrule=1pt,
+    colback=MudWhite!5,boxrule=\p@,
     enhanced jigsaw,breakable=true,
     opacityback=.9,arc is angular=5mm,
-    fuzzy halo=.1mm with MudWhite,top=0.1mm,
+    fuzzy halo=.1mm with MudWhite,top=.1mm,
     bottom=.11mm,colframe=Charcoal%
   }
 }
