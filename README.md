@@ -1,4 +1,4 @@
-[![made-with-latex](https://img.shields.io/badge/Made%20with-LaTeX-1f425f.svg)](https://www.latex-project.org/) [![GPL license](https://img.shields.io/badge/License-GPL-blue.svg)](http://perso.crans.org/besson/LICENSE.html)
+[![made-with-latex](https://img.shields.io/badge/Made%20with-LaTeX-1f425f.svg)](https://www.latex-project.org/) [![GPL license](https://img.shields.io/badge/License-GPL-blue.svg)](http://perso.crans.org/besson/LICENSE.html) [![Compile example](https://github.com/EagleoutIce/pnp-skywrath-documentclass/actions/workflows/compile.yaml/badge.svg)](https://github.com/EagleoutIce/pnp-skywrath-documentclass/actions/workflows/compile.yaml)
 
 # pnp-skywrath-documentclass
 The document class based on the pnp-guide in lilly that i have used to style the skywrath-pen and paper.
